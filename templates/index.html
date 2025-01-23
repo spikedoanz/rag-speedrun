@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CPT Helper</title>
+    <script src="https://unpkg.com/htmx.org"></script>
+    <style>
+        body { max-width: 800px; margin: 20px auto; font-family: Arial, sans-serif; }
+        .container { padding: 20px; }
+        input[type="text"] { width: 70%; padding: 8px; }
+        button { padding: 8px 16px; }
+        .response { margin-top: 20px; padding: 15px; border: 1px solid #ddd; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>CPT Helper</h1>
+        <form hx-post="/query" hx-target="#response" hx-swap="innerHTML">
+            <input type="text" name="query" placeholder="Ask about CPT..." required>
+            <button type="submit">Ask</button>
+        </form>
+        <div id="response" class="response"></div>
+    </div>
+</body>
+</html>
